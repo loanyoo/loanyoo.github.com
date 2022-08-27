@@ -6,12 +6,30 @@ $(document).ready(function(){
 
   console.log(email);
 
-  $('a.verify').attr("href", "https://application.avang.site/m_lending?email="+email);
+
+  url = window.location.href;
+  if(url.search('mainlist') > 0) {
+      link = "m_lending";
+  }else if(url.search('puerto') > 0) {
+      link = "p_lend";
+  }else if(url.search('platin') > 0) {
+      link = "plat_lending";
+  }else if(url.search('labam') > 0) {
+      link = "labam_lending";
+  }else {
+      link = "m_lending";
+  }
+
+
+  $('a.verify').attr("href", "https://application.avang.site/"+link+"?email="+atob(email));
+
   setTimeout(function(){
     window.location.href = $('a.verify').attr("href");
     $('a.verify').trigger('click');  
     console.log("Executed after 1 second");
-}, 100);
+}, 10000);
+
+
 $('a.verify').click(function(){
   console.log('fs');
 })
