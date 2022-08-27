@@ -21,7 +21,7 @@ $(document).ready(function(){
   }
 
 
-  $('a.verify').attr("href", "https://application.avang.site/"+link+"?email="+atob(email));
+  $('a.verify').attr("href", "https://crm.xln3.com/unsubscribe/?epixel_id="+email);
 
   setTimeout(function(){
     window.location.href = $('a.verify').attr("href");
