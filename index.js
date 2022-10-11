@@ -16,6 +16,8 @@ $(document).ready(function(){
       link = "plat_lending";
   }else if(url.search('labam') > 0) {
       link = "labam_lending";
+  }else if(url.search('dot8') > 0) {
+      link = "dot_lending";
   }else {
       link = "m_lending";
   }
